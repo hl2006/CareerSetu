@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completion Certificate | CarrerSetu</title>
+  <meta name="description" content="Preview, print, or download your verified internship completion certificate.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Structuring Certificate...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Available Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html" class="active">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <!-- Controls header -->
+    <div class="cert-actions-bar">
+      <button class="btn btn-secondary" id="btn-preview-cert"><i class="fas fa-eye"></i> Preview Certificate</button>
+      <button class="btn btn-secondary" id="btn-download-cert"><i class="fas fa-file-pdf"></i> Download PDF</button>
+      <button class="btn btn-primary" id="btn-print-cert"><i class="fas fa-print"></i> Print / Save</button>
+    </div>
+
+    <!-- Certificate Frame -->
+    <div class="certificate-frame-container" id="certificate-print-area">
+      <div class="certificate-inner">
+        
+        <!-- Background watermark stamp -->
+        <div class="cert-watermark">
+          <i class="fas fa-award"></i>
+        </div>
+
+        <!-- Certificate Header -->
+        <div class="cert-logo">
+          <i class="fas fa-graduation-cap"></i> CarrerSetu
+        </div>
+        <div class="cert-heading">Certificate of Completion</div>
+        <div class="cert-subheading">Honorable Achievement Award</div>
+        
+        <p class="cert-presented">This document is proudly presented to</p>
+        <div class="cert-name" id="cert-student-name">Hardik Lavti</div>
+        
+        <p class="cert-desc">for outstanding commitment and successful execution of the core technical requirements during the <span><span id="cert-intern-name">Full Stack Development Intern</span></span> program at <span><span id="cert-company-name">Wipro Limited</span></span>. The candidate has achieved approved status reports for a cumulative duration of <span><span id="cert-duration">3 Months</span></span>.</p>
+
+        <!-- Certificate Footer -->
+        <div class="cert-footer-info">
+          <!-- Authority signature 1 -->
+          <div class="cert-sig-box">
+            <div class="cert-sig-hand">Sarah Jenkins</div>
+            <div class="cert-sig-line">Program Coordinator</div>
+          </div>
+          
+          <!-- Mid Verification Seal Stamp -->
+          <div class="cert-stamp">
+            <i class="fas fa-award"></i>
+            <span>VERIFIED</span>
+            <span style="font-size: 0.45rem; opacity: 0.8;">SECURITY</span>
+          </div>
+
+          <!-- Authority signature 2 -->
+          <div class="cert-sig-box">
+            <div class="cert-sig-hand">David V. Smith</div>
+            <div class="cert-sig-line">Director of Engineering</div>
+          </div>
+        </div>
+
+        <!-- Completion Date footer info -->
+        <div style="margin-top: 30px; font-size: 0.8rem; color: #777;">
+          Awarded on: <span id="cert-date" style="font-weight: 600; color: #333;">July 19, 2026</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

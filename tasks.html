@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Task Tracker | CarrerSetu</title>
+  <meta name="description" content="Add daily work deliverables, modify status pipelines, and track task completion states.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading Tasks...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <div class="tasks-layout">
+      
+      <!-- Left Column (Add / Edit Form Card) -->
+      <div class="glass-panel tasks-form-card">
+        <h3 id="form-card-title">Manage Deliverable Task</h3>
+        <form id="task-form">
+          <div class="form-group">
+            <label for="task-title" class="form-label">Task Title</label>
+            <input type="text" id="task-title" class="form-control" placeholder="e.g. Implement Navigation bar" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="task-desc" class="form-label">Task Description</label>
+            <textarea id="task-desc" class="form-control" rows="4" placeholder="Detail the technical specifications, goals or requirements..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="task-date" class="form-label">Target Completion Date</label>
+            <input type="date" id="task-date" class="form-control" required>
+          </div>
+
+          <div class="tasks-form-buttons">
+            <button type="button" class="btn btn-secondary" id="clear-task-btn"><i class="fas fa-eraser"></i> Clear</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Task</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column (Checklist Cards list) -->
+      <div class="tasks-container">
+        <div class="tasks-header">
+          <h2 style="font-size: 1.5rem;">Daily Work Checklist</h2>
+          <div class="tasks-stats" id="tasks-stats-count">0 / 0 Completed</div>
+        </div>
+
+        <div class="tasks-list" id="tasks-list-container">
+          <!-- Dynamically populated from JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

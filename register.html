@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration | CarrerSetu</title>
+  <meta name="description" content="Register your student profile details to unlock dashboard functionalities, task tracking, and verified certificates.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading Workspace...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <div class="glass-panel register-container" style="max-width: 800px;">
+      <h2 id="auth-title" style="text-align: center; margin-bottom: 1.5rem;">Student Workspace Access</h2>
+      
+      <!-- Tabs header -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-register-btn"><i class="fas fa-user-plus"></i> Register Profile</button>
+        <button class="auth-tab-btn" id="tab-login-btn"><i class="fas fa-sign-in-alt"></i> Login with Email</button>
+      </div>
+
+      <!-- Registration Form Segment -->
+      <div id="register-segment" class="auth-form-segment active">
+        <form id="register-form" novalidate>
+          <!-- Upload Fields Container -->
+          <div class="upload-grid">
+            <!-- Profile Photo Box -->
+            <div class="form-group">
+              <span class="form-label">Profile Image</span>
+              <input type="file" id="avatar-upload" class="form-control-file" accept="image/*">
+              <div class="file-upload-box" id="avatar-box">
+                <div class="avatar-preview-container">
+                  <img id="avatar-img-preview" class="avatar-preview" src="" alt="Avatar Preview" style="display: none;">
+                  <div>
+                    <i class="fas fa-camera-retro"></i>
+                    <p style="font-size: 0.8rem; margin: 0;">Click or Drag to Upload Avatar Image</p>
+                  </div>
+                </div>
+              </div>
+              <div class="error-msg"></div>
+            </div>
+
+            <!-- Resume Box -->
+            <div class="form-group">
+              <span class="form-label">Resume Document</span>
+              <input type="file" id="resume-upload" class="form-control-file" accept=".pdf,.doc,.docx">
+              <div class="file-upload-box" id="resume-box">
+                <i class="fas fa-file-pdf"></i>
+                <p style="font-size: 0.8rem; margin: 0;">Click or Drag to Upload PDF Resume</p>
+                <div id="resume-name-preview" class="file-preview"></div>
+              </div>
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <!-- Form fields grid -->
+          <div class="register-grid">
+            <div class="form-group">
+              <label for="reg-name" class="form-label">Full Name</label>
+              <input type="text" id="reg-name" class="form-control" placeholder="e.g. Hardik Lavti">
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-email" class="form-label">Email Address</label>
+              <input type="email" id="reg-email" class="form-control" placeholder="e.g. hardik.lavti@college.edu">
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-phone" class="form-label">Phone Number</label>
+              <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. +91 98765 43210">
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-college" class="form-label">College / University Name</label>
+              <input type="text" id="reg-college" class="form-control" placeholder="e.g. Stanford University">
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-branch" class="form-label">Academic Branch</label>
+              <input type="text" id="reg-branch" class="form-control" placeholder="e.g. Computer Science">
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-year" class="form-label">Academic Year</label>
+              <select id="reg-year" class="form-control">
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year" selected>3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="Postgraduate">Postgraduate</option>
+              </select>
+              <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group register-full-width">
+              <label for="reg-skills" class="form-label">Key Professional Skills (Comma separated)</label>
+              <input type="text" id="reg-skills" class="form-control" placeholder="e.g. HTML5, CSS3, JavaScript, React, SQL">
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: flex-end;">
+            <button type="reset" class="btn btn-secondary"><i class="fas fa-undo"></i> Reset Form</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Register Profile</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Login Form Segment -->
+      <div id="login-segment" class="auth-form-segment" style="max-width: 500px; margin: 0 auto;">
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label for="login-email" class="form-label">Registered Email Address</label>
+            <input type="email" id="login-email" class="form-control" placeholder="e.g. hardik.lavti@college.edu">
+            <div class="error-msg" id="login-email-error"></div>
+          </div>
+          
+          <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: flex-end;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-sign-in-alt"></i> Login to Dashboard</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | CarrerSetu</title>
+  <meta name="description" content="Get in touch with support coordinates or search geographic headquarters maps.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading Contacts...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Available Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <div class="contact-layout">
+      
+      <!-- Left Column (Contact Cards) -->
+      <div class="contact-info-cards">
+        <!-- Email Card -->
+        <div class="glass-panel contact-card">
+          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-card-info">
+            <h3>Support Team Email</h3>
+            <p>support@carrersetu.org</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Response timeframe: Under 24 Business Hours</p>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="glass-panel contact-card">
+          <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="contact-card-info">
+            <h3>Direct Hotline Phone</h3>
+            <p>+91 11 2345 6789</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Availability: Mon-Fri, 9:00 AM - 5:00 PM IST</p>
+          </div>
+        </div>
+
+        <!-- Address Card -->
+        <div class="glass-panel contact-card">
+          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-card-info">
+            <h3>Corporate Headquarters</h3>
+            <p>100 Corporate Pkwy, Connaught Place</p>
+            <p>New Delhi, India 110001</p>
+          </div>
+        </div>
+
+        <!-- Social Media Shortcuts Panel -->
+        <div class="glass-panel contact-card" style="flex-direction: column; gap: 15px;">
+          <div class="contact-socials-wrapper">
+            <h4>Connect via Social Media Channels</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;">Follow us on social channels to receive real-time announcements on upcoming internship openings and partner corporate updates.</p>
+            <div class="social-icons-row">
+              <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+              <a href="#" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Modern Contact Form) -->
+      <div class="glass-panel contact-form-panel">
+        <h3>Submit Contact Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Full Name</label>
+            <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email Address</label>
+            <input type="email" id="contact-email" class="form-control" placeholder="e.g. john@example.com">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Message Subject</label>
+            <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Dashboard access issue">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Description Message</label>
+            <textarea id="contact-message" class="form-control" rows="5" placeholder="Detail the query or support request..."></textarea>
+            <div class="error-msg"></div>
+          </div>
+
+          <div style="text-align: right;">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Below Map Panel -->
+    <div class="map-placeholder-container">
+      <div class="map-frame-mock">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Interactive Headquarters Map Placeholder</h3>
+        <p>100 Corporate Pkwy, Connaught Place, New Delhi, India 110001</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Mock map view. Real coordinates are loaded when active database services are enabled.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

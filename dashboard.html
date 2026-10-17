@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | CarrerSetu</title>
+  <meta name="description" content="View application states, checklist task summaries, and chronologically logged activities.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading Dashboard...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <div class="dashboard-layout">
+      
+      <!-- Sidebar (Profile Card & Quick Actions) -->
+      <aside class="sidebar">
+        <!-- Student Profile Card -->
+        <div class="glass-panel profile-card">
+          <div class="profile-img-container">
+            <img id="dash-profile-photo" class="profile-avatar" src="https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=150&auto=format&fit=crop&q=80" alt="Student Profile Avatar">
+          </div>
+          <h3 id="dash-student-name" class="profile-name">Hardik Lavti</h3>
+          <p id="dash-email" class="profile-email">hardik.lavti@college.edu</p>
+          
+          <ul class="profile-details">
+            <li>
+              <span>College</span>
+              <span id="dash-college">National Institute of Tech</span>
+            </li>
+            <li>
+              <span>Academic Area</span>
+              <span id="dash-branch">Computer Science</span>
+            </li>
+            <li>
+              <span>Active Assignment</span>
+              <span id="dash-internship" style="color: var(--primary);">Unassigned (Apply below)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Actions Panel -->
+        <div class="glass-panel actions-card">
+          <h3>Quick Workspaces</h3>
+          <div class="actions-grid">
+            <a href="internships.html" class="btn btn-secondary"><i class="fas fa-search"></i> View Internships</a>
+            <a href="tasks.html" class="btn btn-secondary"><i class="fas fa-check-square"></i> Daily Tasks Manager</a>
+            <a href="progress.html" class="btn btn-secondary"><i class="fas fa-chart-pie"></i> Update Progress</a>
+            <a href="certificate.html" class="btn btn-primary"><i class="fas fa-file-download"></i> Download Certificate</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Dashboard Main Section -->
+      <section class="dashboard-content">
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+          <h2 id="welcome-greeting">Welcome back!</h2>
+          <p>Welcome to your internship portal workspace. Manage active applications, update daily task logs, verify mid/final reviews, and check metrics score to unlock verified credentials.</p>
+        </div>
+
+        <!-- Dashboard Statistics -->
+        <div class="stats-grid" style="margin-bottom: 0;">
+          <div class="glass-panel stat-card" style="padding: 1.5rem;">
+            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 1.3rem;"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-number" id="dash-stat-applied" style="font-size: 2rem;">0</div>
+            <div class="stat-label" style="font-size: 0.85rem;">Applied Internships</div>
+          </div>
+          <div class="glass-panel stat-card" style="padding: 1.5rem;">
+            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 1.3rem; background: var(--secondary-glow); color: var(--secondary);"><i class="fas fa-spinner"></i></div>
+            <div class="stat-number" id="dash-stat-ongoing" style="font-size: 2rem;">0</div>
+            <div class="stat-label" style="font-size: 0.85rem;">Ongoing Internships</div>
+          </div>
+          <div class="glass-panel stat-card" style="padding: 1.5rem;">
+            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 1.3rem; background: var(--success-glow); color: var(--success);"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-number" id="dash-stat-completed" style="font-size: 2rem;">0</div>
+            <div class="stat-label" style="font-size: 0.85rem;">Completed Programs</div>
+          </div>
+          <div class="glass-panel stat-card" style="padding: 1.5rem;">
+            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 1.3rem; background: var(--danger-glow); color: var(--danger);"><i class="fas fa-tasks"></i></div>
+            <div class="stat-number" id="dash-stat-tasks" style="font-size: 2rem;">0</div>
+            <div class="stat-label" style="font-size: 0.85rem;">Pending Daily Tasks</div>
+          </div>
+        </div>
+
+        <!-- Activity Timeline -->
+        <div class="glass-panel timeline-card">
+          <h3>Recent Activities Timeline</h3>
+          <div class="timeline" id="dashboard-timeline">
+            <!-- Dynamically populated from JS -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

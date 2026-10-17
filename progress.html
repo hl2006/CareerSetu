@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Progress | CarrerSetu</title>
+  <meta name="description" content="View circular progress indicators, task count metrics, attendance percentages, and checklist milestones.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Analyzing Progress...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="progress.html" class="active">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+    <div class="progress-layout">
+      
+      <!-- Left Column (Circular SVG & Linear Indicators) -->
+      <div class="glass-panel progress-dashboard-card">
+        <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Completion Metrics</h2>
+        
+        <!-- Circular SVG Chart -->
+        <div class="circular-progress-container">
+          <svg class="circular-progress">
+            <defs>
+              <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--primary)"></stop>
+                <stop offset="100%" stop-color="var(--secondary)"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="bg-circle" cx="110" cy="110" r="100"></circle>
+            <circle class="fg-circle" cx="110" cy="110" r="100"></circle>
+          </svg>
+          <div class="progress-percentage" id="progress-percentage-text">0%</div>
+        </div>
+
+        <!-- Linear Progress Rows -->
+        <div class="linear-progress-list">
+          <!-- Tasks Count Summary -->
+          <div style="display: flex; justify-content: space-around; width: 100%; margin-bottom: 15px; border-bottom: 1px solid var(--panel-border); padding-bottom: 15px;">
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--success);" id="metric-tasks-completed">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Completed Tasks</div>
+            </div>
+            <div style="border-left: 1px solid var(--panel-border);"></div>
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--warning);" id="metric-tasks-remaining">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Pending Tasks</div>
+            </div>
+          </div>
+
+          <!-- Attendance percentage bar -->
+          <div class="linear-progress-item">
+            <div class="linear-header">
+              <span>Program Attendance</span>
+              <span id="attendance-percent">0%</span>
+            </div>
+            <div class="linear-track">
+              <div class="linear-fill" id="attendance-fill"></div>
+            </div>
+          </div>
+
+          <!-- Performance rating score bar -->
+          <div class="linear-progress-item">
+            <div class="linear-header">
+              <span>Overall Evaluation Score</span>
+              <span id="performance-percent">0%</span>
+            </div>
+            <div class="linear-track">
+              <div class="linear-fill" id="performance-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Checklist Milestones) -->
+      <div class="glass-panel milestones-card">
+        <h3>Program Onboarding Milestones</h3>
+        <div class="milestone-list" id="milestones-list">
+          <!-- Dynamically populated from JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

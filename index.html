@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Your Internship Journey | CarrerSetu</title>
+  <meta name="description" content="Welcome to CarrerSetu. Manage applications, track progress, manage daily tasks, and generate completion certificates.">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Loading Portal...</div>
+  </div>
+
+  <!-- Dynamic Background Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Responsive Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CarrerSetu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="progress.html">Progress</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrap -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Manage Your <span class="gradient-text">Internship Journey</span></h1>
+        <p>Embark on a professional workflow designed to streamline your career development. Apply to premium roles, document daily work milestones, check progress analytics, and secure verified industry credentials instantly.</p>
+        <div class="hero-buttons">
+          <a href="internships.html" class="btn btn-primary"><i class="fas fa-search"></i> Explore Internships</a>
+          <a href="dashboard.html" class="btn btn-secondary"><i class="fas fa-tachometer-alt"></i> Go to Dashboard</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Generates dynamic abstract workspace graphic -->
+        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&auto=format&fit=crop&q=80" alt="Indian students collaborating on laptops in modern corporate workspace">
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section style="margin-top: 60px;">
+      <h2 class="section-title">Portal Statistics</h2>
+      <div class="stats-grid">
+        <div class="glass-panel stat-card">
+          <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="stat-number" id="stat-total-internships" data-target="12">0</div>
+          <div class="stat-label">Total Internships</div>
+        </div>
+        <div class="glass-panel stat-card">
+          <div class="stat-icon"><i class="fas fa-file-signature"></i></div>
+          <div class="stat-number" id="stat-active-apps" data-target="0">0</div>
+          <div class="stat-label">Active Applications</div>
+        </div>
+        <div class="glass-panel stat-card">
+          <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-number" id="stat-completed" data-target="0">0</div>
+          <div class="stat-label">Completed Internships</div>
+        </div>
+        <div class="glass-panel stat-card">
+          <div class="stat-icon"><i class="fas fa-award"></i></div>
+          <div class="stat-number" id="stat-certificates" data-target="0">0</div>
+          <div class="stat-label">Certificates Earned</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+      <h2 class="section-title">Key Portal Features</h2>
+      <div class="features-grid">
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-user-plus"></i></div>
+          <h3>Student Registration</h3>
+          <p>Create a customized profile with your skills, branch, and academic profile credentials to share with recruiters instantly.</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-list-alt"></i></div>
+          <h3>Internship Listings</h3>
+          <p>Browse through structured openings spanning software development, frontend architecture, analytics, design, and AI.</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>Easy Application</h3>
+          <p>Submit applications with a single click. Confirm positions, update dashboards, and set onboarding pipelines seamlessly.</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+          <h3>Task Tracking</h3>
+          <p>Maintain daily checklists of project components. Status indicators keep tasks organized from Pending to Completed.</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Progress Monitoring</h3>
+          <p>Examine progress with automated circular SVG score gauges, linear trackers, and chronological checklists.</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Certificate Generation</h3>
+          <p>Generate downloadable and print-friendly certificates with custom golden borders and verification watermarks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section>
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-grid">
+        <div class="glass-panel step-card">
+          <div class="step-number">1</div>
+          <div class="stat-icon" style="margin-top: 15px;"><i class="fas fa-user-circle"></i></div>
+          <h3>Register Profile</h3>
+          <p>Sign up and upload credentials to instantiate your onboarding workspace.</p>
+        </div>
+        <div class="glass-panel step-card">
+          <div class="step-number">2</div>
+          <div class="stat-icon" style="margin-top: 15px;"><i class="fas fa-check-double"></i></div>
+          <h3>Apply to Openings</h3>
+          <p>Select relevant categories and submit standard applications.</p>
+        </div>
+        <div class="glass-panel step-card">
+          <div class="step-number">3</div>
+          <div class="stat-icon" style="margin-top: 15px;"><i class="fas fa-clipboard-list"></i></div>
+          <h3>Complete Daily Tasks</h3>
+          <p>Log hours, manage targets, and progress through reviews.</p>
+        </div>
+        <div class="glass-panel step-card">
+          <div class="step-number">4</div>
+          <div class="stat-icon" style="margin-top: 15px;"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Get Certificate</h3>
+          <p>Gain approved performance ratings and download verified certificate files.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+      <h2 class="section-title">What Students Say</h2>
+      <div class="testimonials-grid">
+        <div class="glass-panel testimonial-card">
+          <p class="testi-text">This tracker dashboard made managing my daily engineering tasks simple. The automatic circular progress bar kept me highly motivated through the final evaluation reviews!</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=100&auto=format&fit=crop&q=80" alt="Shreya Sen profile photo" class="testi-avatar">
+            <div>
+              <div class="testi-name">Shreya Sen</div>
+              <div class="testi-role">Backend Intern at Infosys Limited</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel testimonial-card">
+          <p class="testi-text">I searched for UI/UX internships and applied instantly. The certificate print layout matches official specifications perfectly. Highly recommend this portal!</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&auto=format&fit=crop&q=80" alt="Mayank Patel profile photo" class="testi-avatar">
+            <div>
+              <div class="testi-name">Mayank Patel</div>
+              <div class="testi-role">Design Intern at Reliance Jio Digital</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel testimonial-card">
+          <p class="testi-text">The LocalStorage system persists my daily log tasks perfectly. The dark mode theme toggle is exceptionally easy on the eyes during late-night coding sessions.</p>
+          <div class="testi-author">
+            <img src="https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=100&auto=format&fit=crop&q=80" alt="Rohan Sharma profile photo" class="testi-avatar">
+            <div>
+              <div class="testi-name">Rohan Sharma</div>
+              <div class="testi-role">Full Stack Intern at Tata Consultancy Services (TCS)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Responsive Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap"></i> CarrerSetu</h3>
+        <p>A unified frontend portal application to manage onboarding programs, task execution pipelines, and verified certificate credentials.</p>
+        <div class="footer-social-row">
+          <a href="#" class="btn-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-icon" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="internships.html">Available Internships</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Workspace</h4>
+        <ul>
+          <li><a href="progress.html">Track Progress</a></li>
+          <li><a href="tasks.html">Task Manager</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support Contact</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> support@carrersetu.org</li>
+          <li><i class="fas fa-phone-alt"></i> +91 11 2345 6789</li>
+          <li><i class="fas fa-map-marker-alt"></i> 100 Corporate Pkwy, New Delhi, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CarrerSetu. Built with HTML5, CSS3, and Vanilla JavaScript. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>
